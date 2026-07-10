@@ -1,0 +1,25 @@
+name: CombatLOG
+version: '${project.version}'
+main: pt.henrique.combatlog.CombatLOG
+api-version: '1.21'
+description: Professional PvP combat logging prevention plugin
+authors:
+  - henrique
+softdepend:
+  - PlayerSettings
+
+commands:
+  combatlog:
+    description: CombatLOG main command
+    usage: /combatlog <reload|status|version>
+    aliases:
+      - clog
+      - cl
+
+permissions:
+  combatlog.admin:
+    description: Allows reloading the plugin
+    default: op
+  combatlog.bypass:
+    description: Bypass combat tag (not tagged)
+    default: false

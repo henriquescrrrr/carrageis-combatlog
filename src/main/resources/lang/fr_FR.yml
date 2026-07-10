@@ -1,0 +1,32 @@
+# ============================================================
+# CombatLOG - Français (fr_FR)
+# ============================================================
+# Supporte: &codes couleur, &#RRGGBB hex, et tags MiniMessage
+# Placeholders: {player}, {opponent}, {time}, {command}
+
+general:
+  unknown: "Inconnu"
+
+combat:
+  tag-start: "&c⚔ Tu es maintenant en combat avec &f{opponent}&c ! &7({time}s) &c— Si tu te déconnectes, &4tu mourras et perdras tes objets&c !"
+  tag-end: "&a✔ Tu n'es plus en combat."
+  countdown: "&e⏱ Le combat se termine dans &f{time}s&e... &cNe te déconnecte pas !"
+  log-broadcast: "&c☠ &f{player} &7s'est déconnecté en combat contre &f{opponent} &7et a été &ctué&7. Objets lâchés sur le lieu de mort."
+  command-blocked: "&cTu ne peux pas utiliser &f/{command} &cpendant le combat ! &7({time}s restantes) &cAttends la fin du combat."
+  tag-title: "&c⚔ COMBAT"
+  tag-subtitle: "&7Ne te déconnecte pas ou &ctu mourras !"
+  end-title: "&a✔ EN SÉCURITÉ"
+  end-subtitle: "&7Le combat est terminé."
+
+bossbar:
+  title: "&c⚔ En Combat &7| &f{time}s"
+
+command:
+  usage: "&e⚔ CombatLOG &7— &f/combatlog <reload|status|version>"
+  no-permission: "&cTu n'as pas la permission d'utiliser cette commande."
+  player-only: "&cCette commande ne peut être utilisée que par les joueurs."
+  reloaded: "&a✔ Configuration de CombatLOG rechargée avec succès !"
+  status-in-combat: "&cTu es en combat ! &7({time}s restantes) &c— Ne te déconnecte pas ou tu mourras et perdras tes objets !"
+  status-safe: "&aTu n'es plus en combat. Tu peux te déconnecter en sécurité."
+  version: "&e⚔ CombatLOG &7v{version}"
+

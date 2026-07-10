@@ -1,0 +1,76 @@
+# ============================================================
+# CombatLOG Configuration
+# ============================================================
+
+# Language file to use (without .yml extension)
+# Available: pt_PT (default), en_US, fr_FR — or add your own lang/*.yml
+language: pt_PT
+
+# ─── Combat Settings ───
+combat:
+  # Duration (in seconds) of combat tag after each hit
+  tag-seconds: 30
+  # Tag on projectile hits (arrows, tridents, snowballs, damage potions, fishing hook, etc.)
+  apply-to-projectiles: true
+  # Tag when a player's tamed pet (wolf, cat, ...) damages another player
+  apply-to-pets: true
+  # Tag players in creative mode
+  apply-in-creative: false
+  # Worlds where combat tagging is disabled
+  ignore-worlds: []
+  # - world_nether
+  # - world_the_end
+
+# ─── Punishment ───
+punishment:
+  # Kill the player on disconnect while tagged
+  kill-on-disconnect: true
+  # Broadcast a message when a player combat logs
+  broadcast: true
+
+# ─── Boss Bar ───
+bossbar:
+  enabled: true
+  # Color: PINK, BLUE, RED, GREEN, YELLOW, PURPLE, WHITE
+  color: RED
+  # Overlay: PROGRESS, NOTCHED_6, NOTCHED_10, NOTCHED_12, NOTCHED_20
+  overlay: PROGRESS
+  # Title shown on the boss bar. {time} = remaining seconds
+  # NOTE: This is a fallback. Per-language titles are in lang/*.yml → bossbar.title
+  title: "&c⚔ Combat &7| &f{time}s"
+  # How often (in ticks) to update the boss bar (2 = every 100ms)
+  update-ticks: 2
+
+# ─── Title Messages ───
+titles:
+  # Show title/subtitle when combat starts
+  on-tag-start: true
+  # Show title/subtitle when combat ends naturally
+  on-tag-end: true
+
+# ─── Chat Messages ───
+chat:
+  # Send message when combat starts
+  tag-start: true
+  # Send message when combat ends naturally
+  tag-end: true
+  # Periodic countdown reminders in chat
+  countdown:
+    enabled: false
+    # Interval in seconds (e.g. 5 = message at 25s, 20s, 15s, 10s, 5s)
+    interval-seconds: 5
+
+# ─── Blocked Commands ───
+# Block specific commands while in combat
+blocked-commands:
+  enabled: true
+  list:
+    - tpa
+    - tpaccept
+    - tpahere
+    - spawn
+    - home
+    - sethome
+    - warp
+    - back
+    - rtp

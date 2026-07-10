@@ -1,0 +1,31 @@
+# ============================================================
+# CombatLOG - English (en_US)
+# ============================================================
+# Supports: &color codes, &#RRGGBB hex, and MiniMessage tags
+# Placeholders: {player}, {opponent}, {time}, {command}
+
+general:
+  unknown: "Unknown"
+
+combat:
+  tag-start: "&c⚔ You are now in combat with &f{opponent}&c! &7({time}s) &c— If you disconnect, &4you will die and lose your items&c!"
+  tag-end: "&a✔ You are no longer in combat."
+  countdown: "&e⏱ Combat ends in &f{time}s&e... &cDo not disconnect!"
+  log-broadcast: "&c☠ &f{player} &7combat logged against &f{opponent} &7and was &ckilled&7. Items dropped at death location."
+  command-blocked: "&cYou cannot use &f/{command} &cduring combat! &7({time}s remaining) &cWait until combat ends."
+  tag-title: "&c⚔ COMBAT"
+  tag-subtitle: "&7Do not disconnect or &cyou will die!"
+  end-title: "&a✔ SAFE"
+  end-subtitle: "&7Combat has ended."
+
+bossbar:
+  title: "&c⚔ In Combat &7| &f{time}s"
+
+command:
+  usage: "&e⚔ CombatLOG &7— &f/combatlog <reload|status|version>"
+  no-permission: "&cYou do not have permission to use this command."
+  player-only: "&cThis command can only be used by players."
+  reloaded: "&a✔ CombatLOG configuration reloaded successfully!"
+  status-in-combat: "&cYou are in combat! &7({time}s remaining) &c— Do not disconnect or you will die and lose your items!"
+  status-safe: "&aYou are not in combat. You are safe to disconnect."
+  version: "&e⚔ CombatLOG &7v{version}"
