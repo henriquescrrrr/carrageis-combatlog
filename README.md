@@ -6,15 +6,15 @@ When two players engage in PvP, both are "combat tagged". While tagged, they can
 
 ## Features
 
-- ⚔️ **Combat Tagging** — Both players are tagged on PvP hits (melee + projectiles)
+**Combat Tagging** — Both players are tagged on PvP hits (melee + projectiles)
 - ⏱️ **Configurable Timer** — Default 30s, refreshes on every hit
-- ☠️ **Disconnect Punishment** — Auto-kill + broadcast on combat log
-- 📊 **Boss Bar Countdown** — Real-time visual countdown with configurable colors
-- 💬 **Chat Notifications** — Tag start, tag end, periodic countdown
-- 🚫 **Command Blocking** — Block `/tpa`, `/home`, etc. while in combat
-- 🌐 **Localization** — English (en_US) and Portuguese (pt_PT) included
-- 🔌 **Developer API** — Clean API via ServicesManager + Custom Events
-- ⚙️ **Highly Configurable** — Every feature can be toggled and customized
+**Disconnect Punishment** — Auto-kill + broadcast on combat log
+**Boss Bar Countdown** — Real-time visual countdown with configurable colors
+**Chat Notifications** — Tag start, tag end, periodic countdown
+**Command Blocking** — Block `/tpa`, `/home`, etc. while in combat
+**Localization** — English (en_US) and Portuguese (pt_PT) included
+**Developer API** — Clean API via ServicesManager + Custom Events
+**Highly Configurable** — Every feature can be toggled and customized
 
 ## Commands
 
