@@ -11,8 +11,10 @@ import pt.henrique.combatlog.hook.PlayerSettingsHook;
 import pt.henrique.combatlog.i18n.LangManager;
 import pt.henrique.combatlog.listener.CombatListener;
 import pt.henrique.combatlog.listener.CommandBlockListener;
+import pt.henrique.combatlog.listener.CushionListener;
 import pt.henrique.combatlog.listener.DeathJoinListener;
 import pt.henrique.combatlog.listener.DisconnectListener;
+import pt.henrique.combatlog.listener.GameModeListener;
 
 public final class CombatLOG extends JavaPlugin {
 
@@ -49,6 +51,8 @@ public final class CombatLOG extends JavaPlugin {
         pm.registerEvents(new DisconnectListener(this, combatManager, configManager, langManager), this);
         pm.registerEvents(new DeathJoinListener(combatManager), this);
         pm.registerEvents(new CommandBlockListener(combatManager, configManager, langManager), this);
+        pm.registerEvents(new GameModeListener(combatManager, configManager, langManager), this);
+        pm.registerEvents(new CushionListener(combatManager, configManager, langManager), this);
 
         // Command
         var cmd = getCommand("combatlog");
@@ -74,15 +78,18 @@ public final class CombatLOG extends JavaPlugin {
     }
 
     /**
-     * Reload config & language files (called by /combatlog reload).
+     * Reload config and language files (called by /combatlog reload).
+     * <p>
+     * Active combat tags are preserved. Dropping them here would make
+     * {@code /combatlog reload} a way to free everyone currently fighting,
+     * which an op could use mid-fight and which would silently skip the
+     * {@code PlayerCombatEndEvent} consumers depend on.
      */
     public void reload() {
-        combatManager.shutdown();
-
         configManager.load();
         langManager.load(configManager.getLanguage());
 
-        combatManager.start();
+        combatManager.restartTicker();
     }
 
     public ConfigManager getConfigManager() {

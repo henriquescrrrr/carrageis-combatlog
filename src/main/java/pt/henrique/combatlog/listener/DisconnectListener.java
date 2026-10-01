@@ -1,6 +1,7 @@
 package pt.henrique.combatlog.listener;
 
 import org.bukkit.Bukkit;
+import org.bukkit.GameMode;
 import org.bukkit.GameRule;
 import org.bukkit.Location;
 import org.bukkit.World;
@@ -92,10 +93,22 @@ public class DisconnectListener implements Listener {
     }
 
     /**
-     * Whether the player's world keeps the inventory on death (so a vanilla death
-     * would NOT drop items). Defaults to false if the gamerule can't be read.
+     * Whether a vanilla death would keep the items instead of dropping them.
+     * <p>
+     * Two independent reasons, and the server ORs them together:
+     * {@code ServerPlayer.die} computes
+     * {@code keepInventory = gameRules.get(KEEP_INVENTORY) || this.isSpectator()},
+     * verified in the shipped 26.2 jar. A spectator therefore always keeps their
+     * inventory on death even with the gamerule off, so a tagged player who
+     * switches to spectator and disconnects would otherwise take the death with
+     * zero item loss. {@code GameModeListener} refuses that switch, and this is
+     * the second line: if the player reaches spectator by any route, the drop is
+     * still forced.
+     * <p>
+     * Defaults to false if the gamerule cannot be read.
      */
     private boolean isKeepInventory(Player player) {
+        if (player.getGameMode() == GameMode.SPECTATOR) return true;
         Boolean keep = player.getWorld().getGameRuleValue(GameRule.KEEP_INVENTORY);
         return keep != null && keep;
     }

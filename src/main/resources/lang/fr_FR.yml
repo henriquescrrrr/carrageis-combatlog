@@ -13,6 +13,8 @@ combat:
   countdown: "&e⏱ Le combat se termine dans &f{time}s&e... &cNe te déconnecte pas !"
   log-broadcast: "&c☠ &f{player} &7s'est déconnecté en combat contre &f{opponent} &7et a été &ctué&7. Objets lâchés sur le lieu de mort."
   command-blocked: "&cTu ne peux pas utiliser &f/{command} &cpendant le combat ! &7({time}s restantes) &cAttends la fin du combat."
+  gamemode-blocked: "&cTu ne peux pas passer en &f{gamemode} &cpendant le combat ! &7({time}s restantes)"
+  cushion-blocked: "&cTu ne peux pas t'asseoir pendant le combat ! &7({time}s restantes)"
   tag-title: "&c⚔ COMBAT"
   tag-subtitle: "&7Ne te déconnecte pas ou &ctu mourras !"
   end-title: "&a✔ EN SÉCURITÉ"

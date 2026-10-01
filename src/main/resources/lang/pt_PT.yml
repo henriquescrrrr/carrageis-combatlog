@@ -13,6 +13,8 @@ combat:
   countdown: "&e⏱ O combate termina em &f{time}s&e... &cNão desconectes!"
   log-broadcast: "&c☠ &f{player} &7desconectou em combate contra &f{opponent} &7e foi &cmorto&7. Itens largados no local da morte."
   command-blocked: "&cNão podes usar &f/{command} &cdurante o combate! &7({time}s restantes) &cEspera até o combate terminar."
+  gamemode-blocked: "&cNão podes mudar para &f{gamemode} &cdurante o combate! &7({time}s restantes)"
+  cushion-blocked: "&cNão te podes sentar durante o combate! &7({time}s restantes)"
   tag-title: "&c⚔ COMBATE"
   tag-subtitle: "&7Não desconectes ou &cvais morrer!"
   end-title: "&a✔ SEGURO"

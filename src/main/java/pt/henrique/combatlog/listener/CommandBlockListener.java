@@ -8,9 +8,20 @@ import org.bukkit.event.player.PlayerCommandPreprocessEvent;
 import pt.henrique.combatlog.combat.CombatManager;
 import pt.henrique.combatlog.config.ConfigManager;
 import pt.henrique.combatlog.i18n.LangManager;
+import pt.henrique.combatlog.util.ColorUtil;
 
 /**
  * Blocks configured commands while a player is combat-tagged.
+ * <p>
+ * Matching is on the exact command label, not a prefix: {@code tpa} in the list
+ * blocks {@code /tpa} but not {@code /tpaccept}, so every variant a server wants
+ * blocked has to be listed. A namespaced label ({@code /essentials:tpa},
+ * {@code /minecraft:tp}) is matched on both the full label and the part after
+ * the colon, and the comparison is case-insensitive.
+ * <p>
+ * Known limit: a command <em>alias</em> is a distinct label and is matched only
+ * if the alias itself is in the list. This is defence in depth on top of each
+ * teleport plugin's own combat check, not a substitute for it.
  */
 public class CommandBlockListener implements Listener {
 
@@ -42,8 +53,11 @@ public class CommandBlockListener implements Listener {
             if (stripped.equalsIgnoreCase(blocked) || baseCommand.equalsIgnoreCase(blocked)) {
                 event.setCancelled(true);
                 int remaining = manager.getRemainingSeconds(player.getUniqueId());
+                // baseCommand comes straight from the player's message and is
+                // substituted into a template that is colour-parsed, so strip
+                // control characters the same way player names are stripped.
                 lang.send(player, "combat.command-blocked",
-                        new String[]{"command", baseCommand},
+                        new String[]{"command", ColorUtil.stripTags(baseCommand)},
                         new String[]{"time", String.valueOf(remaining)});
                 return;
             }

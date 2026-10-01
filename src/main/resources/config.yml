@@ -16,6 +16,15 @@ combat:
   apply-to-pets: true
   # Tag players in creative mode
   apply-in-creative: false
+  # Refuse a switch to creative or spectator while tagged. Both modes are
+  # invulnerable, so allowing the switch lets a tagged player wait out the timer
+  # untouchable. Covers /gamemode and the F3+F4 game mode switcher.
+  # Players with combatlog.bypass are unaffected.
+  block-gamemode-change: true
+  # Keep tagged players off cushions (Minecraft 26.3). A seated player is immune to
+  # knockback, pistons and portals. A player tagged while seated is stood up.
+  # Players with combatlog.bypass are unaffected.
+  block-cushion-sitting: true
   # Worlds where combat tagging is disabled
   ignore-worlds: []
   # - world_nether

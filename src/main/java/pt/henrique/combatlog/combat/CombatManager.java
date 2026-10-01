@@ -51,6 +51,19 @@ public class CombatManager implements CombatLogApi {
         tickTask = Bukkit.getScheduler().runTaskTimer(plugin, this::tick, interval, interval);
     }
 
+    /**
+     * Restart the tick task with the reloaded interval, keeping every active tag.
+     * Boss bars already on screen keep the colour and overlay they were created
+     * with; the new values apply to bars created after the reload.
+     */
+    public void restartTicker() {
+        if (tickTask != null) {
+            tickTask.cancel();
+            tickTask = null;
+        }
+        start();
+    }
+
     public void shutdown() {
         if (tickTask != null) {
             tickTask.cancel();

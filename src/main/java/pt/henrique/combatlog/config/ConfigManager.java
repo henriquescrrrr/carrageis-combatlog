@@ -19,6 +19,8 @@ public class ConfigManager {
     private boolean applyToProjectiles;
     private boolean applyToPets;
     private boolean applyInCreative;
+    private boolean blockGameModeChange;
+    private boolean blockCushionSitting;
     private List<String> ignoreWorlds;
 
     // Punishment
@@ -73,6 +75,8 @@ public class ConfigManager {
         applyToProjectiles = c.getBoolean("combat.apply-to-projectiles", true);
         applyToPets = c.getBoolean("combat.apply-to-pets", true);
         applyInCreative = c.getBoolean("combat.apply-in-creative", false);
+        blockGameModeChange = c.getBoolean("combat.block-gamemode-change", true);
+        blockCushionSitting = c.getBoolean("combat.block-cushion-sitting", true);
         ignoreWorlds = c.getStringList("combat.ignore-worlds");
 
         punishOnDisconnect = c.getBoolean("punishment.kill-on-disconnect", true);
@@ -109,6 +113,7 @@ public class ConfigManager {
         applyToProjectiles = true;
         applyToPets = true;
         applyInCreative = false;
+        blockGameModeChange = true;
         ignoreWorlds = new ArrayList<>();
         punishOnDisconnect = true;
         broadcastOnCombatLog = true;
@@ -135,6 +140,8 @@ public class ConfigManager {
     public boolean isApplyToProjectiles() { return applyToProjectiles; }
     public boolean isApplyToPets() { return applyToPets; }
     public boolean isApplyInCreative() { return applyInCreative; }
+    public boolean isBlockGameModeChange() { return blockGameModeChange; }
+    public boolean isBlockCushionSitting() { return blockCushionSitting; }
     public List<String> getIgnoreWorlds() { return ignoreWorlds; }
 
     public boolean isPunishOnDisconnect() { return punishOnDisconnect; }

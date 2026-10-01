@@ -13,6 +13,8 @@ combat:
   countdown: "&e⏱ Combat ends in &f{time}s&e... &cDo not disconnect!"
   log-broadcast: "&c☠ &f{player} &7combat logged against &f{opponent} &7and was &ckilled&7. Items dropped at death location."
   command-blocked: "&cYou cannot use &f/{command} &cduring combat! &7({time}s remaining) &cWait until combat ends."
+  gamemode-blocked: "&cYou cannot switch to &f{gamemode} &cduring combat! &7({time}s remaining)"
+  cushion-blocked: "&cYou cannot sit down during combat! &7({time}s remaining)"
   tag-title: "&c⚔ COMBAT"
   tag-subtitle: "&7Do not disconnect or &cyou will die!"
   end-title: "&a✔ SAFE"
